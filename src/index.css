@@ -1,0 +1,33 @@
+body {
+  /*  background: linear-gradient(#89cff0 33.33%, #3f7e52); */
+  /*   background-image: linear-gradient(
+    to bottom,
+    #53a4df,
+    #2fb9dd,
+    #46c9ce,
+    #78d6bb,
+    #ace0ab,
+    #afd8a1,
+    #b2d197,
+    #b4c98f,
+    #8ab180,
+    #619873,
+    #398067,
+    #00675b
+  ); */
+  background-image: linear-gradient(
+    to bottom,
+    #266da0,
+    #4591c7,
+    #54a6e1,
+    #79c0f4,
+    #aacebe,
+    #ccb899,
+    #4c8de1,
+    #4a58d4,
+    #3c48b0
+  );
+  background-size: cover;
+  background-repeat: no-repeat;
+  min-height: 100vh;
+}
