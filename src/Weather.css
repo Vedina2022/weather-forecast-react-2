@@ -20,7 +20,7 @@
   line-height: 1;
 }
 
-.Weather img {
+.Weather .weather-icon {
   width: 64px;
   height: 64px;
 }
@@ -53,4 +53,9 @@
 .Weather .search-icon {
   color: white;
   font-size: 20px;
+}
+
+.Weather .unit {
+  font-size: 20px;
+  margin-left: 6px;
 }
