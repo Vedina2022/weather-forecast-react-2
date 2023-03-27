@@ -2,16 +2,27 @@ import React, { useState } from "react";
 import "./Weather.css";
 import { FaSistrix } from "react-icons/fa";
 import axios from "axios";
+
 import { InfinitySpin } from "react-loader-spinner";
+import WeatherInfo from "./WeatherInfo";
 
 export default function Weather(props) {
   const [weatherData, setWeatherData] = useState({ loaded: false });
+  const [location, setLocation] = useState(props.defaultLocation);
+
+  function search() {
+    //OpenWeather API call
+    const apiKey = "4a3d84f7f5a3938304bb369a18a3daff";
+    let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${location}&appid=${apiKey}&units=metric`;
+    axios.get(apiUrl).then(handleResponse);
+  }
 
   function handleResponse(response) {
     //Displaying the Weather Forecast Data
     setWeatherData({
       loaded: true,
       city: response.data.name,
+      date: new Date(response.data.dt * 1000),
       temperature: Math.round(response.data.main.temp),
       humidity: response.data.main.humidity,
       wind: Math.round(response.data.wind.speed),
@@ -20,16 +31,26 @@ export default function Weather(props) {
     });
   }
 
+  function handleSubmit(event) {
+    event.preventDefault();
+    search();
+  }
+
+  function updateLocation(event) {
+    setLocation(event.target.value);
+  }
+
   if (weatherData.loaded) {
     return (
       <div className="Weather">
-        <form className="search-form">
+        <form className="search-form" onSubmit={handleSubmit}>
           <div className="row">
             <div className="col-10">
               <input
                 type="text"
                 className="form-control w-100 search-input no-outline"
                 placeholder="Search for location"
+                onChange={updateLocation}
               />
             </div>
             <div className="col-2">
@@ -40,39 +61,12 @@ export default function Weather(props) {
             </div>{" "}
           </div>
         </form>
-        <h1>{weatherData.city}</h1>
-        <p>Friday, 10:50</p>
-        <p className="text-capitalize">{weatherData.description}</p>
-        <div className="row mt-4">
-          <div className="col-6 d-flex">
-            <img
-              src={weatherData.iconUrl}
-              alt={weatherData.description}
-              className="weather-icon"
-            />
-            <span className="temperature">{weatherData.temperature}</span>
-            <span className="unit">°C</span>
-          </div>
-          <div className="col-6">
-            <p>Humidity: {weatherData.humidity}%</p>
-            <p>Wind: {weatherData.wind} km/h</p>
-          </div>
-        </div>
-        <footer>
-          This project was coded by Nadiia Kyshinska and is{" "}
-          <a href="https://github.com/Vedina2022/weather-forecast-react-2">
-            {" "}
-            open-sourced on GitHub
-          </a>
-        </footer>
+
+        <WeatherInfo data={weatherData} />
       </div>
     );
   } else {
-    //OpenWeather API call
-    const apiKey = "4a3d84f7f5a3938304bb369a18a3daff";
-    let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${props.defaultCity}&appid=${apiKey}&units=metric`;
-    axios.get(apiUrl).then(handleResponse);
-
-    return <InfinitySpin width="500" color="white" />;
+    search();
+    return <InfinitySpin width="700" color="white" />;
   }
 }
