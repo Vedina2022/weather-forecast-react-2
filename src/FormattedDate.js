@@ -1,7 +1,6 @@
 import React from "react";
 
 export default function formattedDate(props) {
-  console.log(props);
   let options = {
     weekday: "long",
     hour: "2-digit",

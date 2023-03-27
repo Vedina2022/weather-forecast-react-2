@@ -4,26 +4,6 @@
   border-radius: 6px;
   color: white;
 }
-.Weather h1 {
-  font-size: 28px;
-  font-weight: 600;
-  margin: 20px 0 0 0;
-}
-
-.Weather p {
-  margin: 0;
-}
-
-.Weather .temperature {
-  font-size: 64px;
-  font-weight: 600;
-  line-height: 1;
-}
-
-.Weather .weather-icon {
-  width: 64px;
-  height: 64px;
-}
 
 .Weather .search-form {
   display: flex;
@@ -55,7 +35,32 @@
   font-size: 20px;
 }
 
+.Weather h1 {
+  font-size: 28px;
+  font-weight: 600;
+  margin: 20px 0 0 0;
+}
+
+.Weather p {
+  margin: 0;
+}
+
+.Weather .weather-icon {
+  width: 90px;
+}
+
+.Weather .temperature {
+  margin: 15px 5px;
+}
+
+.Weather .temperature-value {
+  font-size: 64px;
+  font-weight: 600;
+  line-height: 1;
+}
+
 .Weather .unit {
   font-size: 20px;
-  margin-left: 6px;
+  position: relative;
+  top: -32px;
 }
