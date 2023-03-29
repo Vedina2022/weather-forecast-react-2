@@ -22,5 +22,12 @@ export default function WeatherIcon(props) {
 
   const iconUrl = `icons/${codeMapping[props.code]}.svg`;
 
-  return <img src={iconUrl} alt={props.alt} className="weather-icon" />;
+  return (
+    <img
+      src={iconUrl}
+      alt={props.alt}
+      className="weather-icon"
+      width={props.size}
+    />
+  );
 }
