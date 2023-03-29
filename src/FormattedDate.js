@@ -7,5 +7,6 @@ export default function formattedDate(props) {
     minute: "2-digit",
   };
   let formattedDate = props.date.toLocaleTimeString("en-US", options);
-  return formattedDate;
+
+  return <div>{formattedDate}</div>;
 }
