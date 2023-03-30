@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import "./Weather.css";
 import { FaSistrix } from "react-icons/fa";
 import axios from "axios";
-import DailyForecast from "./DailyForecast";
 
 import { InfinitySpin } from "react-loader-spinner";
 import WeatherInfo from "./WeatherInfo";
@@ -20,7 +19,6 @@ export default function Weather(props) {
 
   function handleResponse(response) {
     //Displaying the Weather Forecast Data
-    console.log(response.data);
     setWeatherData({
       loaded: true,
       coordinates: response.data.coord,
@@ -46,32 +44,25 @@ export default function Weather(props) {
   if (weatherData.loaded) {
     return (
       <div className="Weather">
-        <div className="row">
-          <div className="col-6">
-            <form className="search-form" onSubmit={handleSubmit}>
-              <div className="row">
-                <div className="col-10">
-                  <input
-                    type="text"
-                    className="form-control w-100 search-input no-outline"
-                    placeholder="Search for location"
-                    onChange={updateLocation}
-                  />
-                </div>
-                <div className="col-2">
-                  <button type="submit" className="btn">
-                    {" "}
-                    <FaSistrix className="search-icon" />
-                  </button>
-                </div>{" "}
-              </div>
-            </form>
-            <WeatherInfo data={weatherData} />
+        <form className="search-form" onSubmit={handleSubmit}>
+          <div className="row">
+            <div className="col-10">
+              <input
+                type="text"
+                className="form-control w-100 search-input no-outline"
+                placeholder="Search for location"
+                onChange={updateLocation}
+              />
+            </div>
+            <div className="col-2">
+              <button type="submit" className="btn">
+                {" "}
+                <FaSistrix className="search-icon" />
+              </button>
+            </div>{" "}
           </div>
-          <div className="col-6">
-            <DailyForecast coordinates={weatherData.coordinates} />
-          </div>
-        </div>
+        </form>
+        <WeatherInfo data={weatherData} unit="celsius" />
       </div>
     );
   } else {
