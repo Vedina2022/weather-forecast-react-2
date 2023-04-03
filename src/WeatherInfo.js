@@ -23,21 +23,21 @@ export default function WeatherInfo(props) {
             <WeatherIcon
               code={props.data.iconCode}
               alt={props.data.description}
-              size="90"
+              size="120"
             />
             <div className="temperature">
               <span className="temperature-value">
                 <Temperature celsius={props.data.temperature} unit={unit} />
               </span>
-              <span className="unit">
+              <span className="unit ms-1">
                 <span
-                  className={unit === "celsius" ? "active" : ""}
+                  className={unit === "celsius" ? "active" : "opacity-75"}
                   onClick={changeUnit}
                 >
                   °C |
                 </span>
                 <span
-                  className={unit === "fahrenheit" ? "active" : ""}
+                  className={unit === "fahrenheit" ? "active" : "opacity-75"}
                   onClick={changeUnit}
                 >
                   {" "}
@@ -46,8 +46,12 @@ export default function WeatherInfo(props) {
               </span>
             </div>
           </div>
-          <span className="me-4">Humidity: {props.data.humidity}% </span>
-          <span>Wind: {props.data.wind} km/h</span>
+
+          <div className="weather-description mt-4">
+            <span className="me-4">Feels like: {props.data.feelsLike}°</span>
+            <span className="me-4">Humidity: {props.data.humidity}% </span>
+            <span>Wind: {props.data.wind} km/h</span>
+          </div>
         </div>
       </div>
       <div className="col-5">

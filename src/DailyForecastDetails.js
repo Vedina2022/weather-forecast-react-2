@@ -16,15 +16,15 @@ export default function DailyForecastDetails(props) {
   }
 
   return (
-    <div className="daily-forecast-wrapper border-bottom mb-3">
-      <span className="forecast-day me-4">{FormattedDate()}</span>
-      <WeatherIcon code={iconCode} size="40" />
-      <span className="forecast-temperature-max ms-4">
+    <div className="daily-forecast-wrapper border-bottom mb-2">
+      <span className="forecast-day me-5">{FormattedDate()}</span>
+      <WeatherIcon code={iconCode} size="50" />
+      <span className="forecast-temperature-max ms-5">
         {" "}
         <Temperature celsius={maxTemperature} unit={props.unit} />°{" "}
-      </span>{" "}
-      |{" "}
-      <span className="forecast-temperature-min opacity-50">
+      </span>
+      /{" "}
+      <span className="forecast-temperature-min opacity-75">
         <Temperature celsius={minTemperature} unit={props.unit} />°
       </span>
     </div>

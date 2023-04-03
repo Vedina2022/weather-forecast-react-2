@@ -1,10 +1,16 @@
 .App {
-  max-width: 700px;
-  margin: 30px auto;
-  font-family: "Roboto", sans-serif;
+  max-width: 800px;
+  margin: 70px auto;
+  font-family: "DM Sans", sans-serif;
 }
 
 .App footer {
-  font-size: 12px;
+  text-align: center;
+  font-size: 14px;
   margin-top: 20px;
+  color: white;
+}
+
+.App .footer-link {
+  color: #f1c75d;
 }

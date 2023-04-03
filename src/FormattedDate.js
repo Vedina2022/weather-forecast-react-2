@@ -1,12 +1,13 @@
 import React from "react";
 
 export default function formattedDate(props) {
-  let options = {
+  const options = {
+    month: "short",
+    day: "numeric",
     weekday: "long",
     hour: "2-digit",
     minute: "2-digit",
   };
-  let formattedDate = props.date.toLocaleTimeString("en-US", options);
 
-  return <div>{formattedDate}</div>;
+  return <div>Updated: {props.date.toLocaleTimeString("en-US", options)}</div>;
 }

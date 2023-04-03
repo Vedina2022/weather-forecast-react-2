@@ -1,13 +1,14 @@
 .Weather {
-  background: #3d536d66;
+  background: #3d536d9a;
   padding: 30px;
   border-radius: 6px;
   color: white;
 }
 
 .Weather .search-form {
-  display: flex;
-  color: rgb(225, 227, 240);
+  width: 350px;
+}
+.Weather .form-wrap {
   padding: 3px;
   margin: 0;
   border-radius: 20px;
@@ -15,18 +16,21 @@
   height: 40px;
   width: 300px;
   font-size: 16px;
-  background: #6aa4ce;
+  background: #6a8fbd;
 }
 
 .Weather .search-input::placeholder {
   color: white;
+  opacity: 0.8;
 }
 
 .Weather .search-input[type="text"] {
   background: transparent;
   border: none;
   box-shadow: none;
+  color: white;
 }
+
 .Weather .btn:focus {
   border: none;
 }
@@ -34,11 +38,11 @@
 .Weather .search-icon {
   color: white;
   font-size: 20px;
+  margin: 0 0 5px 45px;
 }
 
 .Weather h1 {
-  font-size: 28px;
-  font-weight: 600;
+  font-size: 32px;
   margin: 20px 0 0 0;
 }
 
@@ -48,7 +52,7 @@
 
 .Weather .temperature {
   display: inline-block;
-  margin: 35px 5px;
+  margin: 40px 5px;
 }
 
 .Weather .temperature-value {
@@ -61,7 +65,6 @@
   font-size: 20px;
   position: relative;
   top: -32px;
-  color: rgb(215, 217, 217);
   cursor: pointer;
 }
 
@@ -69,4 +72,21 @@
   font-weight: 900;
   color: white;
   cursor: default;
+}
+
+.Weather .location-btn {
+  color: white;
+  background-color: #6a8fbd;
+  font-size: 22px;
+  margin-bottom: 10px;
+  border-style: none;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  box-shadow: 1px 2px 4px rgb(0 0 0 / 25%);
+}
+
+.Weather .location-btn:hover {
+  background-color: #82aee4;
+  font-size: 24px;
 }

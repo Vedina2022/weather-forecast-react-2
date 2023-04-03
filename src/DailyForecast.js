@@ -19,7 +19,7 @@ export default function DailyForecast(props) {
     return (
       <div className="daily-forecast ms-3 mt-3 text-center">
         {forecastData.map(function (forecast, index) {
-          if (index < 5) {
+          if (index > 0 && index < 6) {
             return (
               <DailyForecastDetails
                 data={forecast}

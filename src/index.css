@@ -1,6 +1,6 @@
 body {
-  /*  background: linear-gradient(#89cff0 33.33%, #3f7e52); */
-  /*   background-image: linear-gradient(
+  background: linear-gradient(#89cff0 33.33%, #3f7e52);
+  background-image: linear-gradient(
     to bottom,
     #53a4df,
     #2fb9dd,
@@ -14,7 +14,7 @@ body {
     #619873,
     #398067,
     #00675b
-  ); */
+  );
   background-image: linear-gradient(
     to bottom,
     #266da0,
