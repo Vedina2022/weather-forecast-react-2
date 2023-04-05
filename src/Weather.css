@@ -9,15 +9,16 @@
 }
 
 .Weather .search-form {
-  width: 350px;
+  max-width: 60%;
 }
-.Weather .form-wrap {
+
+.Weather .search-wrap {
   padding: 3px;
   margin: 0;
   border-radius: 20px;
   box-shadow: 1px 2px 4px rgb(0 0 0 / 25%);
   height: 40px;
-  width: 300px;
+  width: 100%;
   font-size: 16px;
   background: #6a8fbd;
 }
@@ -27,11 +28,18 @@
   opacity: 0.8;
 }
 
-.Weather .search-input[type="text"] {
+.Weather .search-input[type="search"] {
   background: transparent;
   border: none;
   box-shadow: none;
   color: white;
+  width: 260px;
+}
+
+.Weather button.btn {
+  padding: 0;
+  margin: 0;
+  border: none;
 }
 
 .Weather .btn:focus {
@@ -41,7 +49,7 @@
 .Weather .search-icon {
   color: white;
   font-size: 20px;
-  margin: 0 0 5px 45px;
+  margin: 0 15px 5px;
 }
 
 .Weather h1 {

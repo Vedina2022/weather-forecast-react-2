@@ -65,11 +65,11 @@ export default function Weather(props) {
           <div className="container">
             <form onSubmit={handleSubmit}>
               <div className="row search-form d-table">
-                <div className="form-wrap">
+                <div className="search-wrap">
                   <div className="col-8 d-table-cell">
                     <input
-                      type="text"
-                      className="search-input form-control w-100 "
+                      type="search"
+                      className="search-input form-control"
                       placeholder="Search for location"
                       onChange={updateLocation}
                     />
