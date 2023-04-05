@@ -3,9 +3,10 @@ import "./Weather.css";
 import { FaSistrix } from "react-icons/fa";
 import { SlLocationPin } from "react-icons/sl";
 import axios from "axios";
-
 import { InfinitySpin } from "react-loader-spinner";
 import WeatherInfo from "./WeatherInfo";
+import BackgroundImage from "./BackgroundImage";
+import Footer from "./Footer";
 
 export default function Weather(props) {
   const [weatherData, setWeatherData] = useState({ loaded: false });
@@ -28,7 +29,7 @@ export default function Weather(props) {
 
   function handleResponse(response) {
     //Displaying the Weather Forecast Data
-    console.log(response.data);
+
     setWeatherData({
       loaded: true,
       coordinates: response.data.coord,
@@ -59,40 +60,45 @@ export default function Weather(props) {
 
   if (weatherData.loaded) {
     return (
-      <div className="Weather ">
-        <form onSubmit={handleSubmit}>
-          <div className="row search-form d-table">
-            <div className="form-wrap">
-              <div className="col-8 d-table-cell">
-                <input
-                  type="text"
-                  className="search-input form-control w-100 "
-                  placeholder="Search for location"
-                  onChange={updateLocation}
-                />
+      <BackgroundImage iconCode={weatherData.iconCode}>
+        <div className="Weather">
+          <div className="container">
+            <form onSubmit={handleSubmit}>
+              <div className="row search-form d-table">
+                <div className="form-wrap">
+                  <div className="col-8 d-table-cell">
+                    <input
+                      type="text"
+                      className="search-input form-control w-100 "
+                      placeholder="Search for location"
+                      onChange={updateLocation}
+                    />
+                  </div>
+                  <div className="col-2 d-table-cell">
+                    <button type="submit" className="btn">
+                      {" "}
+                      <FaSistrix className="search-icon" />
+                    </button>
+                  </div>
+                </div>
+                <div className="col-2 d-table-cell">
+                  <button
+                    type="submit"
+                    className="location-btn"
+                    title="Weather for a current location"
+                    onClick={getCurrentLocation}
+                  >
+                    {" "}
+                    <SlLocationPin />
+                  </button>
+                </div>
               </div>
-              <div className="col-2 d-table-cell">
-                <button type="submit" className="btn">
-                  {" "}
-                  <FaSistrix className="search-icon" />
-                </button>
-              </div>
-            </div>
-            <div className="col-2 d-table-cell">
-              <button
-                type="submit"
-                className="location-btn"
-                title="Weather for a current location"
-                onClick={getCurrentLocation}
-              >
-                {" "}
-                <SlLocationPin />
-              </button>
-            </div>
+            </form>
+            <WeatherInfo data={weatherData} unit="celsius" />
           </div>
-        </form>
-        <WeatherInfo data={weatherData} unit="celsius" />
-      </div>
+          <Footer />
+        </div>
+      </BackgroundImage>
     );
   } else {
     search();

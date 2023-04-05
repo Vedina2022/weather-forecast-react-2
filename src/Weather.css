@@ -1,8 +1,11 @@
 .Weather {
-  background: #3d536d9a;
-  padding: 30px;
+  background: #3d536dcd;
+  padding: 30px 30px 15px;
   border-radius: 6px;
   color: white;
+  max-width: 800px;
+  margin: 0 auto;
+  font-family: "DM Sans", sans-serif;
 }
 
 .Weather .search-form {
@@ -89,4 +92,19 @@
 .Weather .location-btn:hover {
   background-color: #82aee4;
   font-size: 24px;
+}
+
+.Weather footer {
+  font-size: 13px;
+  margin-top: 50px;
+  color: white;
+  text-align: center;
+}
+
+.Weather .footer-link {
+  color: white;
+}
+
+.Weather .footer-link:hover {
+  color: #f1c75d;
 }
