@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import "./WeatherInfo.css";
 import FormattedDate from "./FormattedDate";
 import WeatherIcon from "./WeatherIcon";
 import DailyForecast from "./DailyForecast";
@@ -14,12 +15,12 @@ export default function WeatherInfo(props) {
 
   return (
     <div className="row">
-      <div className="col-7">
+      <div className="col-sm-7">
         <div className="weather-info">
           <h1>{props.data.city}</h1>
           <FormattedDate date={props.data.date} />
           <p className="text-capitalize">{props.data.description}</p>
-          <div className="d-flex">
+          <div className="d-flex main-conditions">
             <WeatherIcon
               code={props.data.iconCode}
               alt={props.data.description}
@@ -48,13 +49,19 @@ export default function WeatherInfo(props) {
           </div>
 
           <div className="weather-description mt-4">
-            <span className="me-4">Feels like: {props.data.feelsLike}°</span>
-            <span className="me-4">Humidity: {props.data.humidity}% </span>
-            <span>Wind: {props.data.wind} km/h</span>
+            <span className="weather-details me-4">
+              Feels like: {props.data.feelsLike}°
+            </span>
+            <span className="weather-details me-4">
+              Humidity: {props.data.humidity}%{" "}
+            </span>
+            <span className="weather-details">
+              Wind: {props.data.wind} km/h
+            </span>
           </div>
         </div>
       </div>
-      <div className="col-5">
+      <div className="col-sm-5 forecast-section">
         <DailyForecast coordinates={props.data.coordinates} unit={unit} />
       </div>
     </div>

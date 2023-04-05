@@ -1,0 +1,14 @@
+footer {
+  font-size: 13px;
+  margin-top: 50px;
+  color: white;
+  text-align: center;
+}
+
+.footer-link {
+  color: white;
+}
+
+.footer-link:hover {
+  color: #f1c75d;
+}

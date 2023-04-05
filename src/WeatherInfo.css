@@ -1,0 +1,32 @@
+.weather-info h1 {
+  font-size: 32px;
+  margin: 20px 0 0 0;
+}
+
+.weather-info p {
+  margin: 0;
+}
+
+.weather-info .temperature {
+  display: inline-block;
+  margin: 40px 5px;
+}
+
+.weather-info .temperature-value {
+  font-size: 64px;
+  font-weight: 600;
+  line-height: 1;
+}
+
+.weather-info .unit {
+  font-size: 20px;
+  position: relative;
+  top: -32px;
+  cursor: pointer;
+}
+
+.weather-info .active {
+  font-weight: 900;
+  color: white;
+  cursor: default;
+}
