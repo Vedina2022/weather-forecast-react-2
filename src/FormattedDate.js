@@ -9,5 +9,9 @@ export default function formattedDate(props) {
     minute: "2-digit",
   };
 
-  return <div>Updated: {props.date.toLocaleTimeString("en-US", options)}</div>;
+  return (
+    <div className="date">
+      Updated: {props.date.toLocaleTimeString("en-US", options)}
+    </div>
+  );
 }

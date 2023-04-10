@@ -30,3 +30,22 @@
   color: white;
   cursor: default;
 }
+
+.daily-forecast-wrapper {
+  display: flex;
+  justify-content: space-between;
+}
+
+.forecast-day {
+  align-self: center;
+}
+
+@media (max-width: 768px) {
+  .forecast-section {
+    margin-top: 60px !important;
+  }
+  .daily-forecast-wrapper {
+    display: flex;
+    justify-content: space-between;
+  }
+}

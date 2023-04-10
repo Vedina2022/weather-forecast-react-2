@@ -68,14 +68,19 @@
   font-size: 24px;
 }
 
-@media (max-width: 575px) {
+@media (max-width: 768px) {
   .Weather {
     text-align: center;
     max-width: 100%;
   }
 
   .background {
-    padding: 0 !important;
+    padding: 50px 70px !important;
+  }
+
+  .Weather .search-form {
+    margin-left: auto;
+    margin-right: auto;
   }
 
   .Weather .search-input {
@@ -99,8 +104,11 @@
     display: block;
     margin: 0 !important;
   }
-  .forecast-section {
-    margin-top: 60px !important;
+}
+
+@media (max-width: 575px) {
+  .background {
+    padding: 0 !important;
   }
 }
 
@@ -121,7 +129,7 @@
     font-size: 14px;
   }
 
-  .daily-forecast-wrapper .ms-5 {
-    margin-left: 15px !important;
+  .Weather .date {
+    font-size: 14px;
   }
 }

@@ -9,7 +9,7 @@ export default function DailyForecastDetails(props) {
 
   function FormattedDate() {
     const options = {
-      weekday: "short",
+      weekday: "long",
     };
     const forecastDate = new Date(props.data.dt * 1000);
     return forecastDate.toLocaleDateString("en-US", options);
@@ -17,15 +17,17 @@ export default function DailyForecastDetails(props) {
 
   return (
     <div className="daily-forecast-wrapper border-bottom mb-2">
-      <span className="forecast-day me-5">{FormattedDate()}</span>
-      <WeatherIcon code={iconCode} size="50" />
-      <span className="forecast-temperature-max ms-5">
-        {" "}
-        <Temperature celsius={maxTemperature} unit={props.unit} />°{" "}
-      </span>
-      /{" "}
-      <span className="forecast-temperature-min opacity-75">
-        <Temperature celsius={minTemperature} unit={props.unit} />°
+      <span className="forecast-day">{FormattedDate()}</span>
+      <span className="forecast-conditions">
+        <WeatherIcon code={iconCode} size="50" />
+        <span className="forecast-temperature-max">
+          {" "}
+          <Temperature celsius={maxTemperature} unit={props.unit} />°{" "}
+        </span>
+        /{" "}
+        <span className="forecast-temperature-min opacity-75">
+          <Temperature celsius={minTemperature} unit={props.unit} />°
+        </span>
       </span>
     </div>
   );
